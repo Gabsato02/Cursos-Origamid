@@ -1,0 +1,117 @@
+$cols: 12;
+$gutter: 20px;
+$lg-device: 1200px;
+$md-device: 760px;
+$sm-device: 480px;
+
+// Box-sizing
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+// Mixin para largura dos devices
+
+@mixin device($size) {
+    @if ($size == lg) {
+        @media screen and (min-width: $lg-device) {
+            @content;
+        }
+    }
+
+    @else if ($size == md) {
+        @media screen and (min-width: $md-device) and (max-width: $lg-device - 1) {
+            @content;
+        }
+    }
+
+    @else if ($size == sm) {
+        @media screen and (max-width: $md-device - 1) {
+            @content;
+        }
+    }
+}
+
+// Definindo o tamanho de cada grid
+@function grid($col, $offset: false) {
+    $width: ($col / $cols) * 100 + "%";
+    $result: calc($width - $gutter);
+
+    @if ($offset == offset) {
+        $gutter: $gutter / 2;
+        $result: calc($width - $gutter);
+    }
+
+    @return $result;
+}
+
+// Criando as classes de grid
+@for $i from 1 through $cols {
+    .grid-#{$i} {
+        width: grid($i);
+    }
+}
+
+// Mixin para a estrutura do grid
+@mixin grid-structure {
+    float: left;
+    min-height: 1px;
+    margin-left: $gutter / 2;
+    margin-right: $gutter / 2;
+    // No Mobile vira 1 coluna só, ocupando 100%
+    @include device(sm) {
+        width: 100%;
+        float: none;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+}
+
+// Seletor - seleciona todos os itens que possuem determinado atributo, no caso abaixo classes com grid-
+[class^="grid-"] {
+    @include grid-structure;
+}
+
+// Criando as classes de offset
+@for $i from 1 through $cols {
+    .offset-#{i} {
+        margin-left: grid($i, offset);
+        @extend %offset;
+    }
+}
+
+@include device(sm) {
+    %offset {
+        margin-left: 0px;
+    }
+}
+
+// Mixin para clearfix
+@mixin clearfix {
+    &::after, &::before {
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+
+@mixin container {
+    max-width: $lg-device;
+    margin: 0px auto;
+    position: relative;
+    @include device(md) {
+        max-width: $md-device;
+    }
+    @include device(sm) {
+        max-width: $sm-device;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+.container {
+    @include container;
+}
+
+div {
+    background: rgba(0,0,0,.4);
+}

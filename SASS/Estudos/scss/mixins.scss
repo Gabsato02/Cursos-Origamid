@@ -1,0 +1,15 @@
+/* Os Mixins são propriedades encapsuladas que podem ser reaproveitadas, 
+e podem receber parâmetros, portanto o uso ideal é quando há variação destes parâmetros */
+@import "variables";
+
+@mixin default-div-mixin($bgColor, $fontColor) {
+    background: $bgColor;
+    color: $fontColor;
+}
+
+@mixin mobile {
+    @media (max-width: 600px) {
+        // O Content permite que você deixe o conteúdo a ser recebido "em aberto"
+        @content
+    }
+}

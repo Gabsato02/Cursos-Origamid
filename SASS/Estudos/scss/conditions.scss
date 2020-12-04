@@ -1,0 +1,10 @@
+@import "variables";
+
+// É possível utilizar condicionais
+@if $tema ==  dark {
+    $primary-color: rgb(197, 9, 9);
+    $secondary-color: rgb(236, 208, 49);
+} @else if $tema == light {
+    $primary-color: rgb(236, 208, 49);
+    $secondary-color: rgb(197, 9, 9);
+}

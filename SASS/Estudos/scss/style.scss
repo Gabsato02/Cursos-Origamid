@@ -1,0 +1,63 @@
+// Importando outro arquivo SCSS
+@import "variables";
+@import "mixins";
+@import "conditions";
+
+.default-div-extend {
+    border-radius: 10px + 100 /* É possível realizar operações com as propriedades */;
+    width: 50%;
+    padding: 10px * 2;
+    margin: 20px;
+    border: $default-border;
+}
+
+#div1 {
+    /* O Extend, como o nome sugere, estende as propriedades de outro elemento.
+    É elementos cujas propriedades não sofrem alterações, como vários botões que seguem o mesmo
+    tamanho. */
+    @extend .default-div-extend;
+    @include default-div-mixin($primary-color, $secondary-color);
+    &:hover {
+        // A função Transparentize aplica transparência ao elemento
+        background-color: transparentize($primary-color, .5);
+    }
+    @include mobile {
+        font-family: 'Times New Roman', Times, serif;
+    }
+}
+
+#div2 {
+    @extend .default-div-extend;
+    @include default-div-mixin($secondary-color, $primary-color);
+
+    /* Ampersand (&) permite "grudar" elementos. Dessa forma você pode especificar dentro da herença
+    dos elementos */
+    &:hover {
+        // A função Lighten permite clarear uma cor - Darken escurece a cor
+        @include default-div-mixin(lighten($primary-color, 30%), $secondary-color);
+        /* É possível fazer Nesting de propriedades também, tratando as propriedades de um elemento
+        como se fosse um objeto. Para evitar a repetição do nome do elemento 'font-' */
+        font: {
+            size: 16px;
+            family: monospace;
+            weight: bold;
+            style: italic;
+        };
+    };
+    @include mobile {
+        @include default-div-mixin($dark-color, $secondary-color);
+    }
+}
+
+// É possível usar loops como For, While e Each para criar classes e elementos
+@each $time in $nba {
+    .time-#{$time} {
+        background-image: url('../img/#{$time}.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: inline-flex;
+        width: 300px;
+        height: 200px;
+    }
+}

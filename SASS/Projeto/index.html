@@ -4,17 +4,96 @@
 	<title>Le Scone</title>
 	<meta name="description" content="Le Scone - Restaurante">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel='stylesheet' type="text/css" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Aref+Ruqaa|PT+Mono" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
+
 <body>
-	<div class='container'>
-		<div class='grid-5'>Teste 1</div>
-		<div class='grid-7'>Teste 2</div>
-		<div class='grid-4'>Teste 3</div>
-		<div class='grid-4'>Teste 4</div>
-	</div>
-	<p>
-		Teste
-	</p>
+	<main class='container intro'>
+		<div class='grid-5'>
+			<img class='logo' src='img/lescone.png' alt='Le Scone'>
+			<div class='intro-info'>
+				<p>De Seg. à Sab.<span class='aberto'></span>
+					<br>das 07:00h às 18:00</p>
+				<p>Praia de Botafogo, 300 <br>Rio de Janeiro, RJ</p>
+			</div>
+			<p class='intro-telefone'>+55 021 4213-7564</p>
+		</div>
+		<div class='grid-7'>
+			<img src='img/foto.jpg' class='intro-foto' alt='Foto do Restaurante'>
+		</div>
+	</main>
+
+	<section class='container menu'>
+		<h1 class="grid-4 titulo">Menu</h1>
+		<div class="grid-7 offset-1">
+			<div class='menu-item'>
+				<img src='img/prato-1.png' alt='Foto do Prato 1'>
+				<h2>Entradas</h2>
+				<ul>
+					<li><span>R$15,00</span>Polenta Frita</li>
+					<li><span>R$20,00</span>Dadinhos de Tapioca</li>
+					<li><span>R$10,00</span>Batata Frita</li>
+					<li><span>R$20,00</span>Bolinhos de Costela</li>
+					<li><span>R$25,00</span>Bolinhos de Bacalhau</li>
+				</ul>
+			</div>
+
+			<div class='menu-item'>
+				<img src='img/prato-2.png' alt='Foto do Prato 2'>
+				<h2>Pratos Principais</h2>
+				<ul>
+					<li><span>R$25,00</span>Hamburguer</li>
+					<li><span>R$40,00</span>Panceta na Brasa</li>
+					<li><span>R$30,00</span>Picanha ao Alho</li>
+					<li><span>R$30,00</span>Penne com Queijo</li>
+					<li><span>R$25,00</span>Filé de Peixe</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<section class='container contato'>
+		<h1 class='grid-4 titulo'>Contato</h1>
+		<div class='grid-7 offset-1'>
+			<form>
+				<label>Nome</label>
+				<input type='text'>
+				<div class='row'>
+					<div class='grid-7'>
+						<label>E-mail</label>
+						<input type='text'>
+					</div>
+					<div class='grid-5'>
+						<label>Telefone</label>
+						<input type='text'>
+					</div>
+				</div>
+				<label>Mensagem</label>
+				<textarea></textarea>
+				<input class='button' type='button' value='Enviar'>
+			</form>
+
+			<div class='contato-info'>
+				<p>contato@lescone.com.br ////</p>
+				<p>+55 021 4213-7564 ////</p>
+			</div>
+
+			<a href='#' class='contato-mapa'>
+				<img src='img/map.png'' alt='Como chegar'>
+			</a>
+
+		</div>
+	</section>
+
+	<footer>
+		<div class='container'>
+			<p>Le Scone © 1989 - 2016. Todos os direitos reservados.</p>
+			<a href='https://github.com/Gabsato02' target='_blank'>
+			<img src='img/lescone-icone.png' alt='Icone Le Scone'>
+		</a>
+		</div>
+	</footer>
+
 </body>
 </html>

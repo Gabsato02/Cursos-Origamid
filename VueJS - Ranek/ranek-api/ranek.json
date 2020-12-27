@@ -1,0 +1,99 @@
+{
+    "usuario": [
+      {
+        "id": "andre@origamid.com",
+        "email": "andre@origamid.com",
+        "nome": "André Rafael",
+        "senha": "123",
+        "rua": "Rua Ali Perto",
+        "cep": "12345678",
+        "numero": "25",
+        "estado": "RJ",
+        "cidade": "Rio de Janeiro"
+      }
+    ],
+    "produto": [
+      {
+        "id": "notebook",
+        "nome": "Notebook",
+        "usuario_id": "andre@origamid.com",
+        "preco": "4999",
+        "vendido": "false",
+        "descricao": "Esse é um novo notebook.",
+        "fotos": null
+      },
+      {
+        "id": "smartphone",
+        "nome": "Smartphone",
+        "usuario_id": "andre@origamid.com",
+        "preco": "1999",
+        "vendido": "false",
+        "descricao": "Esse é um novo smartphone.",
+        "fotos": null
+      },
+      {
+        "id": "tablet",
+        "nome": "Tablet",
+        "usuario_id": "andre@origamid.com",
+        "preco": "1399",
+        "vendido": "false",
+        "descricao": "Esse é um novo tablet.",
+        "fotos": null
+      },
+      {
+        "id": "tv",
+        "nome": "TV",
+        "usuario_id": "andre@origamid.com",
+        "preco": "7899",
+        "vendido": "false",
+        "descricao": "Essa é uma nova TV.",
+        "fotos": null
+      },
+      {
+        "id": "videogame",
+        "nome": "Videogame",
+        "usuario_id": "andre@origamid.com",
+        "preco": "3999",
+        "vendido": "false",
+        "descricao": "Esse é um novo videogame.",
+        "fotos": null
+      },
+      {
+        "id": "kindle",
+        "nome": "Kindle",
+        "usuario_id": "andre@origamid.com",
+        "preco": "499",
+        "vendido": "false",
+        "descricao": "Esse é um novo kindle.",
+        "fotos": null
+      },
+      {
+        "id": "som",
+        "nome": "Caixa de som",
+        "usuario_id": "andre@origamid.com",
+        "preco": "899",
+        "vendido": "false",
+        "descricao": "Esse é um novo aparelho de som.",
+        "fotos": null
+      },
+      {
+        "id": "relogio",
+        "nome": "Relógio",
+        "usuario_id": "andre@origamid.com",
+        "preco": "799",
+        "vendido": "false",
+        "descricao": "Esse é um novo relógio.",
+        "fotos": null
+      },
+      {
+        "id": "pc",
+        "nome": "PC Desktop",
+        "usuario_id": "andre@origamid.com",
+        "preco": "1399",
+        "vendido": "false",
+        "descricao": "Esse é um novo computador.",
+        "fotos": null
+      }
+    ]
+  }
+  

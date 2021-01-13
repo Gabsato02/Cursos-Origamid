@@ -16,6 +16,9 @@ export default {
   components: {
     ProdutosLista,
     ProdutosBuscar
+  },
+  created() {
+    document.title = "Ranek - Home";
   }
 }
 </script>
